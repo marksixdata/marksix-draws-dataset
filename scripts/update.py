@@ -14,8 +14,8 @@ ROOT = Path(__file__).resolve().parent.parent
 HOST = 'Administrator@103.96.150.38'
 KEY = str(Path.home() / '.ssh' / 'id_ed25519')
 PHP = r'D:\BtSoft\php\83\php.exe'
-EXPORT_PHP = r'C:\temp\cyq-export-draws.php'
-EXPORT_JSON = r'C:\temp\cyq-draws-export.json'
+EXPORT_PHP = 'C:/temp/cyq-export-draws.php'
+EXPORT_JSON = 'C:/temp/cyq-draws-export.json'
 RAW_LOCAL = Path('/tmp/cyq-dataset/draws-raw.json')
 
 EXPORT_SRC = """<?php
@@ -42,7 +42,7 @@ def main():
     run(['ssh', '-i', KEY, '-o', 'ConnectTimeout=15', HOST, f'{PHP} {EXPORT_PHP}'])
     run(['scp', '-i', KEY, '-o', 'ConnectTimeout=15', f'{HOST}:{EXPORT_JSON}', str(RAW_LOCAL)])
     run(['ssh', '-i', KEY, '-o', 'ConnectTimeout=15', HOST,
-         f'del {EXPORT_PHP} {EXPORT_JSON}'])
+         f'del {EXPORT_PHP.replace(chr(47), chr(92))} {EXPORT_JSON.replace(chr(47), chr(92))}'])
     run([sys.executable, str(ROOT / 'scripts' / 'build.py'), str(RAW_LOCAL)])
     run(['git', '-C', str(ROOT), 'add', 'data/'])
     diff = subprocess.run(['git', '-C', str(ROOT), 'diff', '--cached', '--quiet'])
