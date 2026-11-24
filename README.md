@@ -4,14 +4,14 @@
 
 Complete historical draw results for Macau Mark Six and Hong Kong Mark Six, in CSV and JSON, updated after every draw.
 
-**数据来源 / Source:** [彩友圈 CaiYouQuan](https://cyq369.top) — 澳门/香港六合彩开奖、走势与心水社区。
+**数据来源 / Source:** [彩友圈 CaiYouQuan](https://cyq369.com) — 澳门/香港六合彩开奖、走势与心水社区。
 
 ## 数据内容 / Contents
 
 | 文件 File | 彩种 Lottery | 期数 Draws | 范围 Range |
 |---|---|---|---|
-| `data/macau.csv` / `data/macau.json` | 澳门六合彩 Macau Mark Six | 2441 | 2020067 – 2026326 |
-| `data/hkjc.csv` / `data/hkjc.json` | 香港六合彩 Hong Kong Mark Six | 807 | 2020001 – 2026123 |
+| `data/macau.csv` / `data/macau.json` | 澳门六合彩 Macau Mark Six | 2443 | 2020067 – 2026328 |
+| `data/hkjc.csv` / `data/hkjc.json` | 香港六合彩 Hong Kong Mark Six | 808 | 2020001 – 2026124 |
 
 更新频率：澳门每晚开奖后、香港每期开奖后同步追加。
 Update frequency: appended after each Macau (nightly) and Hong Kong draw.
@@ -56,7 +56,7 @@ print(latest['issue'], latest['numbers'], '+', latest['special'])
 使用本数据集时请注明来源：
 Please cite the source when using this dataset:
 
-> 数据来源：彩友圈 https://cyq369.top
+> 数据来源：彩友圈 https://cyq369.com
 
 ## 许可 / License
 
