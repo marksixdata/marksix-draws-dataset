@@ -1,0 +1,5 @@
+title: Mark Six Draw Dataset
+description: 澳门与香港六合彩历史开奖数据集说明与统计工具文档
+theme: minima
+plugins:
+  - jekyll-feed
