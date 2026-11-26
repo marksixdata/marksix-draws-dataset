@@ -10,7 +10,7 @@ Complete historical draw results for Macau Mark Six and Hong Kong Mark Six, in C
 
 | 文件 File | 彩种 Lottery | 期数 Draws | 范围 Range |
 |---|---|---|---|
-| `data/macau.csv` / `data/macau.json` | 澳门六合彩 Macau Mark Six | 2443 | 2020067 – 2026328 |
+| `data/macau.csv` / `data/macau.json` | 澳门六合彩 Macau Mark Six | 2445 | 2020067 – 2026330 |
 | `data/hkjc.csv` / `data/hkjc.json` | 香港六合彩 Hong Kong Mark Six | 808 | 2020001 – 2026124 |
 
 更新频率：澳门每晚开奖后、香港每期开奖后同步追加。
