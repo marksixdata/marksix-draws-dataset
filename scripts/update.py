@@ -6,9 +6,18 @@ Prereqs (once the GitHub account is ready):
   - credentials for push (gh auth login or SSH key)
 Run manually or from cron after each draw (Macau nightly ~21:35, HK on draw days).
 """
+import os
 import subprocess
 import sys
 from pathlib import Path
+
+# GitHub push 用固定 GIT_SSH_COMMAND：hatch-git 每次 git 调用会剥离 .git/config 里的
+# core.sshCommand，且 exec 容器以 root 运行、ssh 默认找 /root/.ssh/known_hosts，
+# 而 github.com 的 host key 在 /home/hatch/.ssh/known_hosts。写死绝对路径，不依赖 config。
+os.environ['GIT_SSH_COMMAND'] = (
+    "ssh -i /home/hatch/.ssh/github_marksix -o IdentitiesOnly=yes "
+    "-o UserKnownHostsFile=/home/hatch/.ssh/known_hosts"
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 HOST = 'Administrator@103.96.150.38'
